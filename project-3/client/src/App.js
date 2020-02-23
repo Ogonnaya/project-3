@@ -1,12 +1,22 @@
 import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Header from "./components/Header/Header";
+import index from "./pages/index";
+import features from "./pages/planners/features";
+import signup from "./pages/planners/signup";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>Plan your next event!</p>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <Header />
+        <Switch>
+        <Route exact path="/" component={index} />
+        <Route exact path="/planners/features" component={features} />
+        <Route exact path="/planners/signup" component={signup} />
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
