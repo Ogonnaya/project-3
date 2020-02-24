@@ -1,13 +1,16 @@
-import React from "react";
+// app.js
+import React, { Component } from "react";
+import MainForm from "../../components/SignUp/MainForm";
+import { Container } from "reactstrap";
 
-function signup() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>Become a Vendor</p>
-      </header>
-    </div>
-  );
+class SignUp extends Component {
+  render() {
+    return (
+      <Container className="text-center">
+        <MainForm />
+      </Container>
+    );
+  }
 }
 
-export default signup;
+export default SignUp;
