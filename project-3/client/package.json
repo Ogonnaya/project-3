@@ -9,8 +9,11 @@
     "bootstrap": "^4.4.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0",
-    "reactstrap": "^8.4.1"
+    "reactstrap": "^8.4.1",
+    "survey": "^0.3.5",
+    "survey-react": "^1.5.10"
   },
   "scripts": {
     "start": "react-scripts start",
