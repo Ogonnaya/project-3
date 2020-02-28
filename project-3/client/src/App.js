@@ -1,5 +1,8 @@
 import React from "react";
+<<<<<<< HEAD
 import { motion } from "framer-motion"
+=======
+>>>>>>> fac4637c5a34262ec14607f2e131a2babd3702ab
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Header from "./components/Header/Header";
 import index from "./pages/index";
@@ -12,9 +15,15 @@ function App() {
       <div>
         <Header />
         <Switch>
+<<<<<<< HEAD
           <Route exact path="/" component={index} />
           <Route exact path="/planners/features" component={features} />
           <Route exact path="/planners/signup" component={signup} />
+=======
+        <Route exact path="/" component={index} />
+        <Route exact path="/planners/features" component={features} />
+        <Route exact path="/planners/signup" component={signup} />
+>>>>>>> fac4637c5a34262ec14607f2e131a2babd3702ab
         </Switch>
       </div>
     </Router>
