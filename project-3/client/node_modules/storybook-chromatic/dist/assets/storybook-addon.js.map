@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../src/assets/storybook-addon.js"],"names":[],"mappings":";;;;;;;;;;;;;;AAAA;;AACA;;AAEA,0B,CAEA","sourcesContent":["import configure from './configure';\nimport isChromatic from './isChromatic';\n\nconfigure();\n\n// eslint-disable-next-line import/prefer-default-export\nexport { isChromatic };\n"],"file":"storybook-addon.js"}
