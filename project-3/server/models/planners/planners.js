@@ -20,6 +20,6 @@ const plannerSchema = new Schema({
   maxPrice: { type: Number, required: true }
 });
 
-const planners = mongoose.model("planners", plannerSchema);
+const Planners = mongoose.model("Planners", plannerSchema);
 
-module.exports = planners;
+module.exports = Planners;

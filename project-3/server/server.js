@@ -1,9 +1,10 @@
 const express = require("express");
 const mongoose = require("mongoose");
-// const routes = require("./routes");
+const plannerRoutes = require("./routes/plannerIndex");
+const customerRoutes = require("./routes/customerIndex");
 
 const app = express();
-const PORT = process.env.PORT || 3002;
+const PORT = process.env.PORT || 3004;
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -15,7 +16,8 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Add routes, both API and view
-// app.use(routes);
+app.use(plannerRoutes);
+app.use(customerRoutes);
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/kollab", {
   useNewUrlParser: true

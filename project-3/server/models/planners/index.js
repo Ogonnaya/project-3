@@ -1,3 +1,3 @@
 module.exports = {
-  planners: require("./planners")
+  Planners: require("./Planners")
 };
