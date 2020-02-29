@@ -3,8 +3,10 @@ import React, { Component } from "react";
 import { Button, ListGroup, ListGroupItem } from "reactstrap";
 
 class Confirmation extends Component {
-  saveAndContinue = e => {
+  handleFormSubmit = e => {
     e.preventDefault();
+
+    
     this.props.nextStep();
   };
 
@@ -56,7 +58,7 @@ class Confirmation extends Component {
         </ListGroup>
 
         <Button onClick={this.back}>Back</Button>
-        <Button onClick={this.saveAndContinue}>Confirm</Button>
+        <Button onClick={this.handleFormSubmit}>Confirm</Button>
       </div>
     );
   }

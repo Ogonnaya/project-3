@@ -216,7 +216,7 @@ class PersonalDetails extends Component {
               type="checkbox"
               name="category"
               id="weddings"
-              value="weddingd"
+              value="weddings"
               onChange={this.props.handleChange("category")}
               defaultValue={values.category}
             />{" "}
