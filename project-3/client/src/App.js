@@ -17,6 +17,7 @@ function App() {
         <Header />
         <Switch>
 <<<<<<< HEAD
+<<<<<<< HEAD
           <Route exact path="/" component={index} />
           <Route exact path="/planners/features" component={features} />
           <Route exact path="/planners/signup" component={signup} />
@@ -25,6 +26,11 @@ function App() {
         <Route exact path="/planners/features" component={features} />
         <Route exact path="/planners/signup" component={signup} />
 >>>>>>> fac4637c5a34262ec14607f2e131a2babd3702ab
+=======
+          <Route exact path="/" component={index} />
+          <Route exact path="/planners/features" component={features} />
+          <Route exact path="/planners/signup" component={signup} />
+>>>>>>> 0e35e238636da488f6426d34bbc31aacbbbc4abb
         </Switch>
       </div>
     </Router>
