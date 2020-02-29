@@ -2,33 +2,13 @@
 import React from "react";
 import * as Survey from "survey-react";
 import "survey-react/survey.css";
+import { motion } from "framer-motion";
 
 class Index extends React.Component {
-<<<<<<< HEAD
-=======
-
->>>>>>> 0e35e238636da488f6426d34bbc31aacbbbc4abb
   json = {
     title: "Event Planner Survey.",
     pages: [
       {
-<<<<<<< HEAD
-        elements: [
-          {
-            type: "panel",
-            elements: [
-              {
-                type: "html",
-                name: "income_intro",
-                html:
-                  "<article class='intro'>    <h1 class='intro__heading intro__heading--income title'>                     Kollab Your Next Event!              </h1>    <div class='intro__body wysiwyg'>       <p>In this section, you will be asked some of the details of your event to put your optimal vendor team together. Let's KOLLAB!</p>  </div> </article>"
-              }
-            ],
-            name: "panel1"
-          }
-        ],
-        name: "page0"
-=======
         "elements": [
           {
             "type": "panel",
@@ -43,7 +23,6 @@ class Index extends React.Component {
           }
         ],
         "name": "page0"
->>>>>>> 0e35e238636da488f6426d34bbc31aacbbbc4abb
       },
 
       {
@@ -56,24 +35,6 @@ class Index extends React.Component {
             title: "Event",
             hasOther: true,
             isRequired: true,
-<<<<<<< HEAD
-            popupdescription:
-              "Select event type closest to description of desired event",
-            choices: [
-              "Party (Birthday, Sweet 16, Quinceañera, Bar Mitzvah, etc.)",
-              "Wedding",
-              "Charity",
-              "Corporate",
-              "Funeral"
-            ]
-          }
-        ]
-      },
-      {
-        title: "What type of vendor(s) do you need for your event?",
-        popupdescription:
-          "Select all programming languages you have been using for the last six months.",
-=======
             popupdescription: "Select event type closest to description of desired event",
             choices: ["Party (Birthday, Sweet 16, Quinceañera, Bar Mitzvah, etc.)", "Wedding", "Charity", "Corporate", "Funeral"]
           }
@@ -81,7 +42,6 @@ class Index extends React.Component {
       }, {
         title: "What type of vendor(s) do you need for your event?",
         popupdescription: "Select all programming languages you have been using for the last six months.",
->>>>>>> 0e35e238636da488f6426d34bbc31aacbbbc4abb
         questions: [
           {
             type: "checkbox",
@@ -90,22 +50,6 @@ class Index extends React.Component {
             popupdescription: "Select vendor(s) you will need for the event",
             isRequired: true,
             choices: [
-<<<<<<< HEAD
-              "Event Planner",
-              "Decorator",
-              "Caterer",
-              "Photographer",
-              "DJ",
-              "Host"
-            ]
-          }
-        ]
-      },
-      {
-        title: "What locale would you like to have your event?",
-        popupdescription:
-          "We will not share this information with any third-party organization.",
-=======
               "Event Planner", "Decorator", "Caterer", "Photographer", "DJ", "Host"
             ]
           }
@@ -113,7 +57,6 @@ class Index extends React.Component {
       }, {
         title: "What locale would you like to have your event?",
         popupdescription: "We will not share this information with any third-party organization.",
->>>>>>> 0e35e238636da488f6426d34bbc31aacbbbc4abb
         questions: [
           {
             type: "dropdown",
@@ -122,75 +65,6 @@ class Index extends React.Component {
             popupdescription: "Select state you wish to hold your event",
             isRequired: true,
             choices: [
-<<<<<<< HEAD
-              "Alabama",
-              "Alaska",
-              "American Samoa",
-              "Arizona",
-              "Arkansas",
-              "California",
-              "Colorado",
-              "Connecticut",
-              "Delaware",
-              "District of Columbia",
-              "Federated States of Micronesia",
-              "Florida",
-              "Georgia",
-              "Guam",
-              "Hawaii",
-              "Idaho",
-              "Illinois",
-              "Indiana",
-              "Iowa",
-              "Kansas",
-              "Kentucky",
-              "Louisiana",
-              "Maine",
-              "Marshall Islands",
-              "Maryland",
-              "Massachusetts",
-              "Michigan",
-              "Minnesota",
-              "Mississippi",
-              "Missouri",
-              "Montana",
-              "Nebraska",
-              "Nevada",
-              "New Hampshire",
-              "New Jersey",
-              "New Mexico",
-              "New York",
-              "North Carolina",
-              "North Dakota",
-              "Northern Mariana Islands",
-              "Ohio",
-              "Oklahoma",
-              "Oregon",
-              "Palau",
-              "Pennsylvania",
-              "Puerto Rico",
-              "Rhode Island",
-              "South Carolina",
-              "South Dakota",
-              "Tennessee",
-              "Texas",
-              "Utah",
-              "Vermont",
-              "Virgin Island",
-              "Virginia",
-              "Washington",
-              "West Virginia",
-              "Wisconsin",
-              "Wyoming"
-            ]
-          },
-          {
-            type: "text",
-            name: "City",
-            title: "Name of city you would like to have event",
-            popupdescription:
-              "Please, make sure you do not misspell the city name"
-=======
               'Alabama', 'Alaska', 'American Samoa', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'District of Columbia', 'Federated States of Micronesia', 'Florida', 'Georgia', 'Guam', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Marshall Islands', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Northern Mariana Islands', 'Ohio', 'Oklahoma', 'Oregon', 'Palau', 'Pennsylvania', 'Puerto Rico', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virgin Island', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
             ]
           }, {
@@ -198,7 +72,6 @@ class Index extends React.Component {
             name: "City",
             title: "Name of city you would like to have event",
             popupdescription: "Please, make sure you do not misspell the city name"
->>>>>>> 0e35e238636da488f6426d34bbc31aacbbbc4abb
           }
         ]
       }
@@ -209,31 +82,22 @@ class Index extends React.Component {
   onComplete(survey, options) {
     //Write survey results into database
     console.log("Survey results: " + JSON.stringify(survey.data));
-<<<<<<< HEAD
-=======
-
->>>>>>> 0e35e238636da488f6426d34bbc31aacbbbc4abb
   }
   render() {
     var model = new Survey.Model(this.json);
     return (
-<<<<<<< HEAD
-      <div className="App">
-=======
-      <div className="App" >
+      <motion.div className="App" animate={{ scale: 0.9 }}
+        transition={{ duration: 0.5 }} >
         <header className="App-header">
           <p>Plan your next event!</p>
         </header>
->>>>>>> 0e35e238636da488f6426d34bbc31aacbbbc4abb
         <Survey.Survey model={model} onComplete={this.onComplete} />
-      </div>
+      </motion.div>
     );
 
   }
 }
 
-<<<<<<< HEAD
+
+
 export default Index;
-=======
-export default Index;
->>>>>>> 0e35e238636da488f6426d34bbc31aacbbbc4abb
