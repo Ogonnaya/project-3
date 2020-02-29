@@ -1,9 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Header from "./components/Header/Header";
+import Header from "./components/Nav/Header";
 import index from "./pages/index";
 import features from "./pages/planners/features";
 import signup from "./pages/planners/signup";
+
 
 function App() {
   return (
