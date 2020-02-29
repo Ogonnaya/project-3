@@ -22,8 +22,7 @@ class MainForm extends Component {
     image: "",
     bio: "",
     category: "",
-    minPrice: "",
-    maxPrice: ""
+    priceRange: ""
   };
 
   nextStep = () => {
@@ -44,6 +43,7 @@ class MainForm extends Component {
     this.setState({ [input]: event.target.value });
   };
 
+
   render() {
     const { step } = this.state;
     const {
@@ -61,8 +61,7 @@ class MainForm extends Component {
       image,
       bio,
       category,
-      minPrice,
-      maxPrice
+      priceRange
     } = this.state;
     const values = {
       firstName,
@@ -76,8 +75,7 @@ class MainForm extends Component {
       image,
       bio,
       category,
-      minPrice,
-      maxPrice
+      priceRange
     };
     switch (step) {
       case 1:

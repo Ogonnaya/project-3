@@ -3,8 +3,10 @@ import React, { Component } from "react";
 import { Button, ListGroup, ListGroupItem } from "reactstrap";
 
 class Confirmation extends Component {
-  saveAndContinue = e => {
+  handleFormSubmit = e => {
     e.preventDefault();
+
+    
     this.props.nextStep();
   };
 
@@ -26,8 +28,7 @@ class Confirmation extends Component {
         image,
         bio,
         category,
-        minPrice,
-        maxPrice
+        priceRange,
       }
     } = this.props;
 
@@ -52,12 +53,12 @@ class Confirmation extends Component {
           <ListGroupItem>Bio: {bio}</ListGroupItem>
           <ListGroupItem>Category: {category}</ListGroupItem>
           <ListGroupItem>
-            Price Range: {minPrice} to {maxPrice}
+            Price Range: {priceRange}
           </ListGroupItem>
         </ListGroup>
 
         <Button onClick={this.back}>Back</Button>
-        <Button onClick={this.saveAndContinue}>Confirm</Button>
+        <Button onClick={this.handleFormSubmit}>Confirm</Button>
       </div>
     );
   }
