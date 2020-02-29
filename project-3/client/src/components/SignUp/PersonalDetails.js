@@ -28,20 +28,25 @@ class PersonalDetails extends Component {
           />
         </FormGroup> */}
         <FormGroup>
-          <Label>Location</Label>
+          <Label for="city">Location</Label>
           <Input
+            type="text"
+            id="city"
+            name="city"
             placeholder="City"
             onChange={this.props.handleChange("city")}
             defaultValue={values.city}
+            required
           />
 
           {/* <Label for="state">State</Label> */}
           <Input
             type="select"
-            name="select"
+            name="state"
             id="state"
             onChange={this.props.handleChange("state")}
             defaultValue={values.state}
+            required
           >
             <option value="" selected="selected">
               Select a State
@@ -103,10 +108,11 @@ class PersonalDetails extends Component {
           <Label for="title">Title</Label>
           <Input
             type="select"
-            name="select"
+            name="title"
             id="title"
             onChange={this.props.handleChange("title")}
             defaultValue={values.title}
+            required
           >
             <option value="" selected="selected">
               Select a title
@@ -124,11 +130,12 @@ class PersonalDetails extends Component {
           <Label for="bio">Bio</Label>
           <Input
             type="textarea"
-            name="text"
+            name="bio"
             id="bio"
             placeholder="Tell us about yourself"
             onChange={this.props.handleChange("bio")}
             defaultValue={values.bio}
+            required
           />
         </FormGroup>
         {/* <FormGroup>
@@ -152,12 +159,12 @@ class PersonalDetails extends Component {
           <Label for="category">Types of Events</Label>
         </div>
         <FormGroup check inline>
-          <Label check>
+          <Label check for="party">
             <Input
               type="checkbox"
               name="category"
-              id="birthday"
-              value="birthday"
+              id="party"
+              value="party"
               onChange={this.props.handleChange("category")}
               defaultValue={values.category}
             />
@@ -165,7 +172,7 @@ class PersonalDetails extends Component {
           </Label>
         </FormGroup>
         <FormGroup check inline>
-          <Label check>
+          <Label check for="charity">
             <Input
               type="checkbox"
               name="category"
@@ -178,7 +185,7 @@ class PersonalDetails extends Component {
           </Label>
         </FormGroup>
         <FormGroup check inline>
-          <Label check>
+          <Label check for="corporate">
             <Input
               type="checkbox"
               name="category"
@@ -191,7 +198,7 @@ class PersonalDetails extends Component {
           </Label>
         </FormGroup>
         <FormGroup check inline>
-          <Label check>
+          <Label check for="funeral">
             <Input
               type="checkbox"
               name="category"
@@ -204,7 +211,7 @@ class PersonalDetails extends Component {
           </Label>
         </FormGroup>
         <FormGroup check inline>
-          <Label check>
+          <Label check for="weddings">
             <Input
               type="checkbox"
               name="category"
@@ -218,18 +225,28 @@ class PersonalDetails extends Component {
         </FormGroup>
 
         <FormGroup>
-          <Label>Price Range</Label>
+          <Label for="priceRange">What's your estimated price range?</Label>
           <Input
-            placeholder="Min Price"
-            onChange={this.props.handleChange("minPrice")}
-            defaultValue={values.minPrice}
-          />
-          <Input
-            placeholder="Max Price"
-            onChange={this.props.handleChange("maxPrice")}
-            defaultValue={values.maxPrice}
-          />
+            type="select"
+            name="priceRange"
+            id="priceRange"
+            onChange={this.props.handleChange("priceRange")}
+            defaultValue={values.priceRange}
+            required
+          >
+            <option value="" selected="selected">
+              Select a price range
+            </option>
+            <option>Under $1000</option>
+            <option>$1000 to $5000</option>
+            <option>$5000 to $10,000</option>
+            <option>$10,000 to $25,000</option>
+            <option>$25,000 to $50,000</option>
+            <option>$50,000 to $75,000</option>
+            <option>Over $75000</option>
+          </Input>
         </FormGroup>
+
         <Button onClick={this.back}>Back</Button>
         <Button onClick={this.saveAndContinue}>Save And Continue </Button>
       </Form>

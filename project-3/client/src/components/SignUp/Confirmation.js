@@ -26,8 +26,7 @@ class Confirmation extends Component {
         image,
         bio,
         category,
-        minPrice,
-        maxPrice
+        priceRange,
       }
     } = this.props;
 
@@ -52,7 +51,7 @@ class Confirmation extends Component {
           <ListGroupItem>Bio: {bio}</ListGroupItem>
           <ListGroupItem>Category: {category}</ListGroupItem>
           <ListGroupItem>
-            Price Range: {minPrice} to {maxPrice}
+            Price Range: {priceRange}
           </ListGroupItem>
         </ListGroup>
 

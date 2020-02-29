@@ -22,8 +22,7 @@ class MainForm extends Component {
     image: "",
     bio: "",
     category: "",
-    minPrice: "",
-    maxPrice: ""
+    priceRange: ""
   };
 
   nextStep = () => {
@@ -61,8 +60,7 @@ class MainForm extends Component {
       image,
       bio,
       category,
-      minPrice,
-      maxPrice
+      priceRange
     } = this.state;
     const values = {
       firstName,
@@ -76,8 +74,7 @@ class MainForm extends Component {
       image,
       bio,
       category,
-      minPrice,
-      maxPrice
+      priceRange
     };
     switch (step) {
       case 1:
