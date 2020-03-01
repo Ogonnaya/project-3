@@ -45,4 +45,8 @@ const Customer = props => {
   );
 };
 
+<<<<<<< HEAD
 export default Customer;
+=======
+export default Customer;
+>>>>>>> 8e553aa2b849f6df4a890a342da02f2c9e1cff37

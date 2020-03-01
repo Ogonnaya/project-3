@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8e553aa2b849f6df4a890a342da02f2c9e1cff37
 // MainForm.jsx
 import React, { Component } from "react";
 import UserDetails from "./UserDetails";
@@ -6,6 +10,7 @@ import Confirmation from "./Confirmation";
 import Success from "./Success";
 
 class MainForm extends Component {
+<<<<<<< HEAD
   state = {
     step: 1,
     // Gather basic information
@@ -112,6 +117,112 @@ class MainForm extends Component {
       //     return <Success />;
     }
   }
+=======
+    state = {
+        step: 1,
+        // Gather basic information
+        firstName: "",
+        lastName: "",
+        phoneNumber: "",
+        email: "",
+        password: "",
+
+        // Gather profile information
+        city: "",
+        state: "",
+        title: "",
+        image: "",
+        bio: "",
+        category: "",
+        priceRange: ""
+    };
+
+    nextStep = () => {
+        const { step } = this.state;
+        this.setState({
+            step: step + 1
+        });
+    };
+
+    prevStep = () => {
+        const { step } = this.state;
+        this.setState({
+            step: step - 1
+        });
+    };
+
+    handleChange = input => event => {
+        this.setState({ [input]: event.target.value });
+    };
+
+
+    render() {
+        const { step } = this.state;
+        const {
+            // Gather basic information
+            firstName,
+            lastName,
+            phoneNumber,
+            email,
+            password,
+
+            // Gather profile information
+            city,
+            state,
+            title,
+            image,
+            bio,
+            category,
+            priceRange
+        } = this.state;
+        const values = {
+            firstName,
+            lastName,
+            phoneNumber,
+            email,
+            password,
+            city,
+            state,
+            title,
+            image,
+            bio,
+            category,
+            priceRange
+        };
+        switch (step) {
+            case 1:
+                return (
+                    <UserDetails
+                        nextStep={this.nextStep}
+                        handleChange={this.handleChange}
+                        values={values}
+                    />
+                );
+            case 2:
+                return (
+                    <PersonalDetails
+                        nextStep={this.nextStep}
+                        prevStep={this.prevStep}
+                        handleChange={this.handleChange}
+                        values={values}
+                    />
+                );
+            case 3:
+                return (
+                    <Confirmation
+                        nextStep={this.nextStep}
+                        prevStep={this.prevStep}
+                        values={values}
+                    />
+                );
+            case 4:
+                return <Success />;
+
+            //   default:
+            //     return <Success />;
+        }
+    }
+>>>>>>> 8e553aa2b849f6df4a890a342da02f2c9e1cff37
 }
 
 export default MainForm;

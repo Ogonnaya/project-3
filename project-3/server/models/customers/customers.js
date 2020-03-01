@@ -16,6 +16,7 @@ const customerSchema = new Schema({
   image: { type: String, required: false }, //How do we allow users to upload and store images in the database?
   bio: { type: String, required: false },
   category: { type: String, required: true }, //How do we store multiple selections?
+  vendors: { type: Array, required: true },
   minPrice: { type: Number, required: true },
   maxPrice: { type: Number, required: true }
 });

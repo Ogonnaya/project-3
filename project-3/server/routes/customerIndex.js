@@ -6,7 +6,7 @@ const customersRoutes = require("./api/customers");
 router.use("/api/customers", customersRoutes);
 
 // If no API routes are hit, send the React app
-router.use(function(req, res) {
+router.use(function (req, res) {
   res.sendFile(path.join(__dirname, "../client/build/index.html"));
 });
 
