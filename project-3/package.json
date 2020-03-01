@@ -18,8 +18,8 @@
   "dependencies": {
     "bcrypt": "^4.0.0",
     "express": "^4.17.1",
-    "mongoose": "^5.9.2",
-    "if-env": "^1.0.4"
+    "if-env": "^1.0.4",
+    "mongoose": "^5.9.2"
   },
   "devDependencies": {
     "concurrently": "^4.1.0",
