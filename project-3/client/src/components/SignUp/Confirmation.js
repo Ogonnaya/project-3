@@ -6,7 +6,7 @@ class Confirmation extends Component {
   handleFormSubmit = e => {
     e.preventDefault();
 
-    
+
     this.props.nextStep();
   };
 

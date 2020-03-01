@@ -5,7 +5,7 @@ const db = require("../models/planners");
 module.exports = {
   findAllSaved: (req, res) => {
     db.Planners.find()
-      .then(function(result) {
+      .then(function (result) {
         res.json(result);
       })
       .catch(err => res.status(422).json(err));

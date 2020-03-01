@@ -24,7 +24,6 @@ class Index extends React.Component {
         ],
         name: "page0"
       },
-
       {
         title: "What type of event are you planning?",
         popupdescription: "Select event type you plan on having?",

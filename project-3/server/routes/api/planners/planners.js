@@ -3,11 +3,11 @@ const plannerController = require("../../../controllers/plannerController");
 
 // Landing page call
 router.route("/:id")
-	.post(plannerController.create);
+    .post(plannerController.create);
 
 // Saved page calls
 router.route("/saved")
-  	.get(plannerController.findAllSaved);
+    .get(plannerController.findAllSaved);
 
 // router.route("/delete/:id")
 //   	.delete(plannerController.remove);
