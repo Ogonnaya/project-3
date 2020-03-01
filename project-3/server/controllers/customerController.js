@@ -1,10 +1,10 @@
 //require db
 // import db from ("../models")
-const db = require("../models/planners");
+const db = require("../models/customers");
 
 module.exports = {
     findAllSaved: (req, res) => {
-        db.Planners.find()
+        db.Customers.find()
             .then(function (result) {
                 res.json(result);
             })
@@ -12,7 +12,7 @@ module.exports = {
     },
 
     create: (req, res) => {
-        db.Planners.create({
+        db.Customers.create({
             //Basic Information
             firstName: req.body.firstName,
             lastName: req.body.lastName,
