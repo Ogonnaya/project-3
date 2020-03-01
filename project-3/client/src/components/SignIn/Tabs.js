@@ -7,46 +7,46 @@ import Planner from "./Planner";
 import classnames from "classnames";
 
 const Example = props => {
-    const [activeTab, setActiveTab] = useState("1");
+  const [activeTab, setActiveTab] = useState("1");
 
-    const toggle = tab => {
-        if (activeTab !== tab) setActiveTab(tab);
-    };
+  const toggle = tab => {
+    if (activeTab !== tab) setActiveTab(tab);
+  };
 
-    return (
-        <div>
-            <Nav tabs>
-                <NavItem>
-                    <NavLink
-                        className={classnames({ active: activeTab === "1" })}
-                        onClick={() => {
-                            toggle("1");
-                        }}
-                    >
-                        Customer
+  return (
+    <div>
+      <Nav tabs>
+        <NavItem>
+          <NavLink
+            className={classnames({ active: activeTab === "1" })}
+            onClick={() => {
+              toggle("1");
+            }}
+          >
+            Customer
           </NavLink>
-                </NavItem>
-                <NavItem>
-                    <NavLink
-                        className={classnames({ active: activeTab === "2" })}
-                        onClick={() => {
-                            toggle("2");
-                        }}
-                    >
-                        Vendor
+        </NavItem>
+        <NavItem>
+          <NavLink
+            className={classnames({ active: activeTab === "2" })}
+            onClick={() => {
+              toggle("2");
+            }}
+          >
+            Vendor
           </NavLink>
-                </NavItem>
-            </Nav>
-            <TabContent activeTab={activeTab}>
-                <TabPane tabId="1">
-                    <Customer />
-                </TabPane>
-                <TabPane tabId="2">
-                    <Planner />
-                </TabPane>
-            </TabContent>
-        </div>
-    );
+        </NavItem>
+      </Nav>
+      <TabContent activeTab={activeTab}>
+        <TabPane tabId="1">
+          <Customer />
+        </TabPane>
+        <TabPane tabId="2">
+          <Planner />
+        </TabPane>
+      </TabContent>
+    </div>
+  );
 };
 
 export default Example;

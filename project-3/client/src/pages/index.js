@@ -2,11 +2,10 @@
 import React from "react";
 import * as Survey from "survey-react";
 import "survey-react/survey.css";
-import AddTripButton from "./dashboard"
 
 class Index extends React.Component {
   json = {
-    title: "Kollaborate Your Event",
+    title: "Event Planner Survey.",
     pages: [
       {
         elements: [
@@ -17,7 +16,7 @@ class Index extends React.Component {
                 type: "html",
                 name: "income_intro",
                 html:
-                  "<article class='survey-intro text-center'>    <h1 class='intro__heading intro__heading--income title'>                     Kollab Your Next Event!              </h1>    <div class='intro__body wysiwyg'>       <p>In this section, you will be asked some of the details of your event to put your optimal vendor team together. Let's KOLLAB!</p>  </div> </article>"
+                  "<article class='intro'>    <h1 class='intro__heading intro__heading--income title'>                     Kollab Your Next Event!              </h1>    <div class='intro__body wysiwyg'>       <p>In this section, you will be asked some of the details of your event to put your optimal vendor team together. Let's KOLLAB!</p>  </div> </article>"
               }
             ],
             name: "panel1"
@@ -26,31 +25,12 @@ class Index extends React.Component {
         name: "page0"
       },
       {
-        title: "Set up your account",
-        popupdescription:
-          "We will not share this information with any third-party organization.",
-        questions: [
-          {
-            type: "text",
-            name: "email",
-            isRequired: true,
-            title: "Email"
-          },
-          {
-            type: "text",
-            name: "password",
-            isRequired: true,
-            title: "Password"
-          }
-        ]
-      },
-      {
         title: "What type of event are you planning?",
         popupdescription: "Select event type you plan on having?",
         questions: [
           {
-            type: "dropdown",
-            name: "category",
+            type: "checkbox",
+            name: "Type",
             title: "Event",
             hasOther: true,
             isRequired: true,
@@ -73,7 +53,7 @@ class Index extends React.Component {
         questions: [
           {
             type: "checkbox",
-            name: "vendors",
+            name: "Vendors",
             title: "Please select ALL that apply from the list",
             popupdescription: "Select vendor(s) you will need for the event",
             isRequired: true,
@@ -95,7 +75,7 @@ class Index extends React.Component {
         questions: [
           {
             type: "dropdown",
-            name: "state",
+            name: "State",
             title: "State you would like to have event",
             popupdescription: "Select state you wish to hold your event",
             isRequired: true,
@@ -163,7 +143,7 @@ class Index extends React.Component {
           },
           {
             type: "text",
-            name: "city",
+            name: "City",
             title: "Name of city you would like to have event",
             popupdescription:
               "Please, make sure you do not misspell the city name"
@@ -172,19 +152,6 @@ class Index extends React.Component {
       }
     ]
   };
-
-  constructor(props) {
-    super(props)
-    this.state = { isEmptyState: true }
-  }
-
-  triggerAddTripState = () => {
-    this.setState({
-      ...this.state,
-      isEmptyState: false,
-      isAddTripState: true
-    })
-  }
 
   //Define a callback methods on survey complete
   onComplete(survey, options) {
@@ -195,10 +162,7 @@ class Index extends React.Component {
     var model = new Survey.Model(this.json);
     return (
       <div className="App">
-        {this.state.isEmptyState && <AddTripButton addTrip={this.triggerAddTripState} />}
-
-        {this.state.isAddTripState && <Survey.Survey model={model} onComplete={this.onComplete} />}
-        {/* <Survey.Survey model={model} onComplete={this.onComplete} /> */}
+        <Survey.Survey model={model} onComplete={this.onComplete} />
       </div>
     );
   }

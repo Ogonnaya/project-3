@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, Component } from "react";
 import {
   Collapse,
   Navbar,
@@ -9,6 +9,9 @@ import {
   NavLink,
   Button
 } from "reactstrap";
+import Modal from "../SignIn/Modal"
+
+// class Header extends Component {}
 
 const Header = props => {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,9 +29,7 @@ const Header = props => {
               <NavLink href="/planners/features">Exclusive Vendors</NavLink>
             </NavItem>
           </Nav>
-          <Button color="link" href="#">
-            Already have an account? Sign In
-          </Button>
+          <Modal />
           <Button outline color="secondary" href="/planners/signup">
             Become a Vendor
           </Button>
