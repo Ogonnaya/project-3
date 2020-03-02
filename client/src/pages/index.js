@@ -2,7 +2,7 @@
 import React from "react";
 import * as Survey from "survey-react";
 import "survey-react/survey.css";
-import AddTripButton from "./dashboard";
+import AddTripButton from "./dashboard"
 
 class Index extends React.Component {
   json = {
@@ -168,7 +168,7 @@ class Index extends React.Component {
             type: "text",
             name: "city",
             title: "Name of city you would like to have event",
-            placeHolder: "Dallas"
+            placeHolder: "Dallas",
           }
         ]
       },
@@ -199,8 +199,8 @@ class Index extends React.Component {
   };
 
   constructor(props) {
-    super(props);
-    this.state = { isEmptyState: true };
+    super(props)
+    this.state = { isEmptyState: true }
   }
 
   triggerAddTripState = () => {
@@ -208,8 +208,8 @@ class Index extends React.Component {
       ...this.state,
       isEmptyState: false,
       isAddTripState: true
-    });
-  };
+    })
+  }
 
   //Define a callback methods on survey complete
   onComplete(survey, options) {
@@ -220,13 +220,9 @@ class Index extends React.Component {
     var model = new Survey.Model(this.json);
     return (
       <div className="App">
-        {this.state.isEmptyState && (
-          <AddTripButton addTrip={this.triggerAddTripState} />
-        )}
+        {this.state.isEmptyState && <AddTripButton addTrip={this.triggerAddTripState} />}
 
-        {this.state.isAddTripState && (
-          <Survey.Survey model={model} onComplete={this.onComplete} />
-        )}
+        {this.state.isAddTripState && <Survey.Survey model={model} onComplete={this.onComplete} />}
         {/* <Survey.Survey model={model} onComplete={this.onComplete} /> */}
       </div>
     );
