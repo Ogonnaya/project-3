@@ -3,6 +3,7 @@ import React from "react";
 import * as Survey from "survey-react";
 import "survey-react/survey.css";
 import AddTripButton from "./dashboard"
+import { motion } from "framer-motion"
 
 class Index extends React.Component {
   json = {
@@ -194,12 +195,14 @@ class Index extends React.Component {
   render() {
     var model = new Survey.Model(this.json);
     return (
-      <div className="App">
+      <motion.div className="App" animate={{ scale: 0.9 }}
+        transition={{ duration: 0.5 }}
+      >
         {this.state.isEmptyState && <AddTripButton addTrip={this.triggerAddTripState} />}
 
         {this.state.isAddTripState && <Survey.Survey model={model} onComplete={this.onComplete} />}
         {/* <Survey.Survey model={model} onComplete={this.onComplete} /> */}
-      </div>
+      </motion.div>
     );
   }
 }
