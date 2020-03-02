@@ -2,7 +2,8 @@
 import React from "react";
 import * as Survey from "survey-react";
 import "survey-react/survey.css";
-import AddTripButton from "./dashboard";
+import AddTripButton from "./dashboard"
+
 class Index extends React.Component {
   json = {
     title: "Kollaborate Your Event",
@@ -33,11 +34,14 @@ class Index extends React.Component {
             type: "text",
             name: "email",
             isRequired: true,
+            placeHolder: "something@email.com",
             title: "Email"
           },
           {
             type: "text",
             name: "password",
+            inputType: "password",
+            placeHolder: "Enter a password for your account",
             isRequired: true,
             title: "Password"
           }
@@ -164,24 +168,49 @@ class Index extends React.Component {
             type: "text",
             name: "city",
             title: "Name of city you would like to have event",
-            popupdescription:
-              "Please, make sure you do not misspell the city name"
+            placeHolder: "Dallas",
+          }
+        ]
+      },
+      {
+        title: "What's your price range?",
+        popupdescription:
+          "We will not share this information with any third-party organization.",
+        questions: [
+          {
+            type: "dropdown",
+            name: "priceRange",
+            title: "Price Range",
+            popupdescription: "Tell us what you charge.",
+            isRequired: true,
+            choices: [
+              "Under $1000",
+              "$1000 to $5000",
+              "$5000 to $10,000",
+              "$10,000 to $25,000",
+              "$25,000 to $50,000",
+              "$50,000 to $75,000",
+              "Over $75000"
+            ]
           }
         ]
       }
     ]
   };
+
   constructor(props) {
-    super(props);
-    this.state = { isEmptyState: true };
+    super(props)
+    this.state = { isEmptyState: true }
   }
+
   triggerAddTripState = () => {
     this.setState({
       ...this.state,
       isEmptyState: false,
       isAddTripState: true
-    });
-  };
+    })
+  }
+
   //Define a callback methods on survey complete
   onComplete(survey, options) {
     //Write survey results into database
@@ -191,15 +220,13 @@ class Index extends React.Component {
     var model = new Survey.Model(this.json);
     return (
       <div className="App">
-        {this.state.isEmptyState && (
-          <AddTripButton addTrip={this.triggerAddTripState} />
-        )}
-        {this.state.isAddTripState && (
-          <Survey.Survey model={model} onComplete={this.onComplete} />
-        )}
+        {this.state.isEmptyState && <AddTripButton addTrip={this.triggerAddTripState} />}
+
+        {this.state.isAddTripState && <Survey.Survey model={model} onComplete={this.onComplete} />}
         {/* <Survey.Survey model={model} onComplete={this.onComplete} /> */}
       </div>
     );
   }
 }
+
 export default Index;
