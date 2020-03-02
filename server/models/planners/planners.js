@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const customerSchema = new Schema({
+const plannerSchema = new Schema({
   //Basic Information
   firstName: { type: String, required: true },
   lastName: { type: String, required: true },
@@ -15,11 +15,10 @@ const customerSchema = new Schema({
   title: { type: String, required: true },
   image: { type: String, required: false }, //How do we allow users to upload and store images in the database?
   bio: { type: String, required: false },
-  category: { type: String, required: true }, //How do we store multiple selections?
-  minPrice: { type: Number, required: true },
-  maxPrice: { type: Number, required: true }
+  category: { type: String, required: true }, //Array Mongoose //How do we store multiple selections?
+  priceRange: { type: String, required: true }
 });
 
-const Customers = mongoose.model("Customers", customerSchema);
+const Planners = mongoose.model("Planners", plannerSchema);
 
-module.exports = Customers;
+module.exports = Planners;
