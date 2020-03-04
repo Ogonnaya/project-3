@@ -19,6 +19,12 @@ if (process.env.NODE_ENV === "production") {
 app.use(plannerRoutes);
 app.use(customerRoutes);
 
+if (process.env.NODE_ENV === "production") {
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "client/build", "index.html"));
+  });
+}
+
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/kollab", {
   useNewUrlParser: true
 });
