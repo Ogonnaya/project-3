@@ -11,6 +11,14 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
 
+  findById: (req, res) => {
+    db.Planners.findById(req.params.id)
+      .then(function (result) {
+        res.json(result);
+      })
+      .catch(err => res.status(422).json(err));
+  },
+
   create: (req, res) => {
     db.Planners.create({
       //Basic Information
