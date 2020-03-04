@@ -4,6 +4,8 @@ import * as Survey from "survey-react";
 import "survey-react/survey.css";
 import AddTripButton from "./dashboard"
 import { motion } from "framer-motion"
+import Loader from 'react-loader-spinner'
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
 
 class Index extends React.Component {
   json = {
@@ -176,7 +178,10 @@ class Index extends React.Component {
 
   constructor(props) {
     super(props)
-    this.state = { isEmptyState: true }
+    this.state = {
+      isEmptyState: true,
+      isAddTripState: false
+    }
   }
 
   triggerAddTripState = () => {
@@ -187,22 +192,48 @@ class Index extends React.Component {
     })
   }
 
+
+  endLoop = () => {
+    const time = 3000
+    setTimeout(() => {
+      this.setState({
+        isAddTripState: true,
+        isEmptyState: true
+
+      })
+    }, 3000)
+    return 3000;
+  }
+
   //Define a callback methods on survey complete
   onComplete(survey, options) {
     //Write survey results into database
     console.log("Survey results: " + JSON.stringify(survey.data));
   }
+
+
   render() {
     var model = new Survey.Model(this.json);
     return (
-      <motion.div className="App" animate={{ scale: 0.9 }}
-        transition={{ duration: 0.5 }}
-      >
-        {this.state.isEmptyState && <AddTripButton addTrip={this.triggerAddTripState} />}
+      !this.state.isAddTripState ?
+        <Loader className="loader" type="BallTriangle"
+          color="#00BFFF"
+          height={100}
+          width={100}
+          timeout={this.endLoop()}>
 
-        {this.state.isAddTripState && <Survey.Survey model={model} onComplete={this.onComplete} />}
-        {/* <Survey.Survey model={model} onComplete={this.onComplete} /> */}
-      </motion.div>
+        </Loader>
+        :
+
+        <motion.div className="App" animate={{ scale: 0.9 }}
+          transition={{ duration: 1 }}
+        >
+          {this.state.isEmptyState && <AddTripButton addTrip={this.triggerAddTripState} />}
+
+          {!this.state.isEmptyState && <Survey.Survey model={model} onComplete={this.onComplete} />}
+          {/* <Survey.Survey model={model} onComplete={this.onComplete} /> */}
+        </motion.div>
+
     );
   }
 }
