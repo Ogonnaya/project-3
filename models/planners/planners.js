@@ -15,7 +15,7 @@ const plannerSchema = new Schema({
   title: { type: String, required: true },
   image: { type: String, required: false }, //How do we allow users to upload and store images in the database?
   bio: { type: String, required: false },
-  category: { type: String, required: true }, //Array Mongoose //How do we store multiple selections?
+  category: { type: Array, required: true }, //Array Mongoose //How do we store multiple selections?
   priceRange: { type: String, required: true }
 });
 

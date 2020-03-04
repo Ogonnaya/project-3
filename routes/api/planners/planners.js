@@ -1,6 +1,8 @@
 const router = require("express").Router();
 const plannerController = require("../../../controllers/plannerController");
 
+//Login
+
 // Landing page call
 router.route("/:id")
     .post(plannerController.create);
