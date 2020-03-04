@@ -1,4 +1,6 @@
 const express = require("express");
+var cors = require("cors");
+var bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const path = require("path");
 const plannerRoutes = require("./routes/plannerIndex");
