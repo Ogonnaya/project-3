@@ -1,18 +1,18 @@
 //require db
 // import db from ("../models")
-const db = require("../models/planners");
+const db = require("../models/customers");
 
 module.exports = {
   findAllSaved: (req, res) => {
-    db.Planners.find()
-      .then(function (result) {
+    db.Customers.find()
+      .then(function(result) {
         res.json(result);
       })
       .catch(err => res.status(422).json(err));
   },
 
   create: (req, res) => {
-    db.Planners.create({
+    db.Customers.create({
       //Basic Information
       firstName: req.body.firstName,
       lastName: req.body.lastName,
@@ -27,8 +27,7 @@ module.exports = {
       image: req.body.image, //How do we allow users to upload and store images in the database?
       bio: req.body.bio,
       category: req.body.category, //How do we store multiple selections?
-      minPrice: req.body.minPrice,
-      maxPrice: req.body.maxPrice,
+      priceRange: req.body.priceRange,
       key: req.body.key
     }).then(res.end());
   }
