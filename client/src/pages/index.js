@@ -6,6 +6,7 @@ import AddTripButton from "./dashboard"
 import { motion } from "framer-motion"
 import Loader from 'react-loader-spinner'
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
+import history from "../utils/history";
 
 class Index extends React.Component {
   json = {
@@ -42,6 +43,7 @@ class Index extends React.Component {
           {
             type: "text",
             name: "password",
+            inputType: "password",
             isRequired: true,
             title: "Password"
           }
@@ -209,6 +211,8 @@ class Index extends React.Component {
   onComplete(survey, options) {
     //Write survey results into database
     console.log("Survey results: " + JSON.stringify(survey.data));
+    history.push("./planners/profile");
+    window.location.reload()
   }
 
 

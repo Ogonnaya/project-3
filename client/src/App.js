@@ -5,11 +5,12 @@ import index from "./pages/index";
 import features from "./pages/planners/features";
 import signup from "./pages/planners/signup";
 import profile from "./pages/planners/profile";
+import history from "./utils/history";
 
 
 function App() {
   return (
-    <Router>
+    <Router history={history}>
       <div>
         <Header />
         <Switch>
