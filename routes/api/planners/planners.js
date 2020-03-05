@@ -4,8 +4,9 @@ const plannerController = require("../../../controllers/plannerController");
 //Login
 
 // Landing page call
-router.route("/:id")
-    .post(plannerController.create);
+router.route("/saved/:id")
+    .post(plannerController.create)
+    .get(plannerController.findById);
 
 // Saved page calls
 router.route("/saved")
