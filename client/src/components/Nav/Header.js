@@ -1,17 +1,5 @@
-// import React, { useState, Component } from "react";
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
-import {
-  Collapse,
-  Navbar,
-  //   NavbarToggler,
-//   NavbarBrand,
-  Nav,
-  NavItem,
-  //   NavLink,
-  Button
-} from "reactstrap";
-// import Modal from "../SignIn/Modal"
 
 class Header extends Component {
   logOut(e) {
@@ -22,37 +10,37 @@ class Header extends Component {
 
   render() {
     const loginRegLink = (
-      <Navbar>
-        <NavItem>
+      <ul className="navbar-nav">
+        <li className="nav-item">
           <Link to="/login" className="nav-link">
             Already have an account? Sign In
           </Link>
-        </NavItem>
-        <Button outline color="secondary">
-          <Link to="/planners/signup" className="nav-link">
+        </li>
+        <li className="nav-item">
+          <Link to="/register" className="nav-link">
             Become a vendor
           </Link>
-        </Button>
-      </Navbar>
+        </li>
+      </ul>
     );
 
     const userLink = (
-      <Navbar>
-        <NavItem>
+      <ul className="navbar-nav">
+        <li className="nav-item">
           <Link to="/profile" className="nav-link">
-            Profile
+            User
           </Link>
-        </NavItem>
-        <NavItem>
-          <a href="/" onClick={this.logOut.bind(this)} className="nav-link">
+        </li>
+        <li className="nav-item">
+          <a href="" onClick={this.logOut.bind(this)} className="nav-link">
             Logout
           </a>
-        </NavItem>
-      </Navbar>
+        </li>
+      </ul>
     );
 
     return (
-      <Nav className="navbar-expand-lg navbar-dark bg-light">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark rounded">
         <button
           className="navbar-toggler"
           type="button"
@@ -64,54 +52,23 @@ class Header extends Component {
         >
           <span className="navbar-toggler-icon" />
         </button>
-        <Navbar>
-          <Link to="/" className="nav-link">
-            Kollab
-          </Link>
-        </Navbar>
 
-        <Collapse
+        <div
           className="collapse navbar-collapse justify-content-md-center"
           id="navbarsExample10"
         >
-          <Navbar>
-            {/* <NavItem>
+          <ul className="navbar-nav">
+            <li className="nav-item">
               <Link to="/" className="nav-link">
                 Kollab
               </Link>
-            </NavItem> */}
-          </Navbar>
+            </li>
+          </ul>
           {localStorage.usertoken ? userLink : loginRegLink}
-        </Collapse>
-      </Nav>
+        </div>
+      </nav>
     );
   }
 }
-
-// const Header = props => {
-//   const [isOpen, setIsOpen] = useState(false);
-
-//   const toggle = () => setIsOpen(!isOpen);
-
-//   return (
-//     <div>
-//       <Navbar color="light" light expand="md">
-//         <NavbarBrand href="/">Kollab</NavbarBrand>
-//         <NavbarToggler onClick={toggle} />
-//         <Collapse isOpen={isOpen} navbar>
-//           <Nav className="mr-auto" navbar>
-//             {/* <NavItem>
-//               <NavLink href="/planners/features">Exclusive Vendors</NavLink>
-//             </NavItem> */}
-//           </Nav>
-//           <Modal />
-//           <Button outline color="secondary" href="/planners/signup">
-//             Become a Vendor
-//           </Button>
-//         </Collapse>
-//       </Navbar>
-//     </div>
-//   );
-// };
 
 export default withRouter(Header);

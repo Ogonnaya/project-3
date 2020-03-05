@@ -3,11 +3,9 @@ import React, { Component } from "react";
 import { Button, ListGroup, ListGroupItem } from "reactstrap";
 
 class Confirmation extends Component {
-  handleFormSubmit = e => {
+  submitForm = e => {
     e.preventDefault();
-
-
-    this.props.nextStep();
+    this.props.handleSubmit();
   };
 
   back = e => {
@@ -28,15 +26,16 @@ class Confirmation extends Component {
         image,
         bio,
         category,
-        priceRange,
+        priceRange
       }
     } = this.props;
 
     return (
       <div>
-        <h1 className="text-center">Confirm your Details</h1>
+        <h1 className="text-center">Almost done, confirm your details.</h1>
         <p>
-          Click Confirm if the following details have been correctly entered
+          Click "confirm" if the following details have been correctly entered,
+          or "back" to change anything.
         </p>
         <ListGroup>
           <ListGroupItem>First Name: {firstName}</ListGroupItem>
@@ -52,13 +51,11 @@ class Confirmation extends Component {
           <ListGroupItem>Image: {image}</ListGroupItem>
           <ListGroupItem>Bio: {bio}</ListGroupItem>
           <ListGroupItem>Category: {category}</ListGroupItem>
-          <ListGroupItem>
-            Price Range: {priceRange}
-          </ListGroupItem>
+          <ListGroupItem>Price Range: {priceRange}</ListGroupItem>
         </ListGroup>
 
         <Button onClick={this.back}>Back</Button>
-        <Button onClick={this.handleFormSubmit}>Confirm</Button>
+        <Button onClick={this.submitForm}>Confirm</Button>
       </div>
     );
   }

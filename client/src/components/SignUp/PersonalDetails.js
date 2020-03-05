@@ -18,7 +18,7 @@ class PersonalDetails extends Component {
     const { values } = this.props;
     return (
       <Form color="blue">
-        <h1 className="text-center">Enter Personal Details</h1>
+        <h1 className="text-center">Tell us a little bit about what you do.</h1>
         {/* <FormGroup>
           <Label>City</Label>
           <Input
@@ -31,7 +31,6 @@ class PersonalDetails extends Component {
           <Label for="city">Location</Label>
           <Input
             type="text"
-            id="city"
             name="city"
             placeholder="City"
             onChange={this.props.handleChange("city")}
@@ -43,14 +42,11 @@ class PersonalDetails extends Component {
           <Input
             type="select"
             name="state"
-            id="state"
             onChange={this.props.handleChange("state")}
             defaultValue={values.state}
             required
           >
-            <option value="" selected="selected">
-              Select a State
-            </option>
+            <option value="selected">Select a State</option>
             <option value="AL">Alabama</option>
             <option value="AK">Alaska</option>
             <option value="AZ">Arizona</option>
@@ -109,14 +105,11 @@ class PersonalDetails extends Component {
           <Input
             type="select"
             name="title"
-            id="title"
             onChange={this.props.handleChange("title")}
             defaultValue={values.title}
             required
           >
-            <option value="" selected="selected">
-              Select a title
-            </option>
+            <option value="selected">Select a title</option>
             <option>Caterer</option>
             <option>Decorator</option>
             <option>DJ</option>
@@ -127,11 +120,21 @@ class PersonalDetails extends Component {
           </Input>
         </FormGroup>
         <FormGroup>
+          <Label for="image">Image</Label>
+          <Input
+            type="text"
+            name="image"
+            placeholder="Add a link to your picture"
+            onChange={this.props.handleChange("image")}
+            defaultValue={values.image}
+            required
+          />
+        </FormGroup>
+        <FormGroup>
           <Label for="bio">Bio</Label>
           <Input
             type="textarea"
             name="bio"
-            id="bio"
             placeholder="Tell us about yourself"
             onChange={this.props.handleChange("bio")}
             defaultValue={values.bio}
@@ -163,8 +166,6 @@ class PersonalDetails extends Component {
             <Input
               type="checkbox"
               name="category"
-              id="party"
-              value="party"
               onChange={this.props.handleChange("category")}
               defaultValue={values.category}
             />
@@ -176,11 +177,9 @@ class PersonalDetails extends Component {
             <Input
               type="checkbox"
               name="category"
-              id="charity"
-              value="charity"
               onChange={this.props.handleChange("category")}
               defaultValue={values.category}
-            />{" "}
+            />
             Charity Events
           </Label>
         </FormGroup>
@@ -189,11 +188,9 @@ class PersonalDetails extends Component {
             <Input
               type="checkbox"
               name="category"
-              id="corporate"
-              value="corporate"
               onChange={this.props.handleChange("category")}
               defaultValue={values.category}
-            />{" "}
+            />
             Corporate Events
           </Label>
         </FormGroup>
@@ -202,11 +199,9 @@ class PersonalDetails extends Component {
             <Input
               type="checkbox"
               name="category"
-              id="funeral"
-              value="funeral"
               onChange={this.props.handleChange("category")}
               defaultValue={values.category}
-            />{" "}
+            />
             Funerals
           </Label>
         </FormGroup>
@@ -215,11 +210,9 @@ class PersonalDetails extends Component {
             <Input
               type="checkbox"
               name="category"
-              id="weddings"
-              value="weddings"
               onChange={this.props.handleChange("category")}
               defaultValue={values.category}
-            />{" "}
+            />
             Weddings
           </Label>
         </FormGroup>
@@ -229,14 +222,11 @@ class PersonalDetails extends Component {
           <Input
             type="select"
             name="priceRange"
-            id="priceRange"
             onChange={this.props.handleChange("priceRange")}
             defaultValue={values.priceRange}
             required
           >
-            <option value="" selected="selected">
-              Select a price range
-            </option>
+            <option value="selected">Select a price range</option>
             <option>Under $1000</option>
             <option>$1000 to $5000</option>
             <option>$5000 to $10,000</option>

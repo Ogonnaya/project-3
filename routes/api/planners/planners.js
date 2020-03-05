@@ -1,11 +1,7 @@
-// const router = require("express").Router();
-const express = require("express");
-const router = express.Router();
+const router = require("express").Router();
 const plannerController = require("../../../controllers/plannerController");
 
 //Login
-
-
 
 // Landing page call
 router.route("/saved/:id")

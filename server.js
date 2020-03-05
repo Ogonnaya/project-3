@@ -19,7 +19,6 @@ app.use(
     extended: false
   })
 );
-
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
@@ -35,9 +34,12 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/kollab", {
-  useNewUrlParser: true
-});
+mongoose
+  .connect(process.env.MONGODB_URI || "mongodb://localhost/kollab", {
+    useNewUrlParser: true
+  })
+  .then(() => console.log("MongoDB Connected"))
+  .catch(err => console.log(err));
 
 // Start the API server
 app.listen(PORT, () => {
