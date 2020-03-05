@@ -218,14 +218,14 @@ class Index extends React.Component {
       !this.state.isAddTripState ?
         <Loader className="loader" type="BallTriangle"
           color="#00BFFF"
-          height={100}
-          width={100}
+          height={300}
+          width={300}
           timeout={this.endLoop()}>
 
         </Loader>
         :
 
-        <motion.div className="App" animate={{ scale: 0.9 }}
+        <motion.div className="App" animate={{ scale: 1.3 }}
           transition={{ duration: 1 }}
         >
           {this.state.isEmptyState && <AddTripButton addTrip={this.triggerAddTripState} />}
