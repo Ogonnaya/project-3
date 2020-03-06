@@ -1,0 +1,47 @@
+.card-deck {
+    margin-bottom: 15px;
+}
+
+.card-title {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.jumbotron {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.0);
+    color: white
+}
+
+.form-group {
+    color: white;
+}
+
+/* .vendorForm {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7));
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+} */
+
+.mx-auto {
+    margin-bottom: 120px
+}
+
+.vendor-jumbotron {
+    padding: 64px 0 0;
+}
+
+.checkbox-label {
+    color: white;
+}
+
+.event-type {
+    margin-bottom: 16px;
+}
+
+.App {
+    margin: 0 25%;
+    padding-top: 240px;
+}

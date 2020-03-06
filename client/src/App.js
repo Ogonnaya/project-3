@@ -1,27 +1,32 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Header from "./components/Nav/Header";
-import index from "./pages/index";
-import features from "./pages/planners/features";
-import signup from "./pages/planners/signup";
-import profile from "./pages/planners/profile";
-import history from "./utils/history";
+import React, { Component } from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
+import Navbar from "./components/Navbar";
+import Landing from "./components/Landing";
+import Login from "./components/Login";
+import Register from "./components/Register";
+import Profile from "./components/Profile";
+import Featured from "./components/Featured";
+import Team from "./components/Team";
 
-function App() {
-  return (
-    <Router history={history}>
-      <div>
-        <Header />
-        <Switch>
-          <Route exact path="/" component={index} />
-          <Route exact path="/planners/features" component={features} />
-          <Route exact path="/planners/signup" component={signup} />
-          <Route exact path="/planners/profile" component={profile} />
-        </Switch>
-      </div>
-    </Router>
-  );
+class App extends Component {
+  render() {
+    return (
+      <Router>
+        <div>
+          <Navbar />
+          <Route exact path="/" component={Landing} />
+          <Route exact path="/featured" component={Featured} />
+          <div>
+            <Route exact path="/register" component={Register} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/profile" component={Profile} />
+            <Route exact path="/team" component={Team} />
+          </div>
+        </div>
+      </Router>
+    );
+  }
 }
 
 export default App;

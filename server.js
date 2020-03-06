@@ -1,38 +1,29 @@
-const express = require("express");
+var express = require("express");
 var cors = require("cors");
 var bodyParser = require("body-parser");
+var app = express();
 const mongoose = require("mongoose");
-const path = require("path");
-const plannerRoutes = require("./routes/plannerIndex");
-const customerRoutes = require("./routes/customerIndex");
+var port = process.env.PORT || 3001;
 
-const app = express();
-const PORT = process.env.PORT || 3001;
+app.use(bodyParser.json());
+app.use(cors());
+app.use(
+  bodyParser.urlencoded({
+    extended: false
+  })
+);
 
-// Define middleware here
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+const mongoURI = "mongodb://localhost:27017/kollab";
 
-// Serve up static assets (usually on heroku)
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-}
+mongoose
+  .connect(mongoURI, { useNewUrlParser: true })
+  .then(() => console.log("MongoDB Connected"))
+  .catch(err => console.log(err));
 
-// Add routes, both API and view
-app.use(plannerRoutes);
-app.use(customerRoutes);
+var Planners = require("./routes/Planners");
 
-if (process.env.NODE_ENV === "production") {
-  app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "client/build", "index.html"));
-  });
-}
+app.use("/planners", Planners);
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/kollab", {
-  useNewUrlParser: true
-});
-
-// Start the API server
-app.listen(PORT, () => {
-  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
+app.listen(port, function() {
+  console.log("Server is running on port: " + port);
 });
