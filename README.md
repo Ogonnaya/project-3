@@ -1,10 +1,3 @@
-# MERN Login and Registration (MongoDB, Express, ReactJS, NodeJS)
+# Kollab
 
-![MERN Todo](../screenshots/react-login1.PNG)
-#
-![MERN Todo](../screenshots/react-login2.PNG)
-
-
-## Setup
-
-Manually clone the repo and then run `npm install`.
+Kollab helps you build a team of industry professionals for your next event!
